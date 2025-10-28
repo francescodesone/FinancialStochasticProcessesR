@@ -1,11 +1,6 @@
 
 
 # ============================================================
-# File: distributions.R
-# Author: francescodesone
-# Package: FinancialStochasticProcessR
-# License: MIT
-#
 # Description:
 #   This file contains custom implementations of random number
 #   generators for several financial distributions, including:
