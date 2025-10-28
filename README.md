@@ -1,4 +1,4 @@
-# 📈 FinancialStochasticProcessR
+# 📈 FinancialStochasticProcessesR
 
 **FinancialStochasticProcessR** is an R package designed to simulate and visualize a variety of **stochastic processes** commonly used in finance, econometrics, and time-series modeling.
 
