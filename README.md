@@ -8,14 +8,13 @@ The package provides flexible tools to generate, analyze, and plot random proces
 
 ## 🚀 Features
 
-- Simulation of **multiplicative random walks** with customizable drift and distributions  
+- Simulation of **random walks** with customizable drift and distributions  
 - Simulation of **ARMA(p, q)** processes with flexible innovation distributions  
 - Simulation of **GARCH(p, q)** volatility processes  
 - Support for **heavy-tailed** and **skewed** distributions (GED, skewed-t, skewed-normal, etc.)  
 - Simulation of **interest rate models** (Vasicek, CIR, Black–Karasinski, CKLS)  
 - Parameter estimation functions with **bootstrap confidence intervals** (GBM, Vasicek, CIR, Jump Diffusion)  
-- Easy visualization of simulated paths with automatic coloring options  
-- Unified plotting style with mean trajectory highlighted  
+- Easy visualization of simulated paths with automatic coloring options 
 
 ---
 
@@ -95,50 +94,38 @@ The package currently supports the following stochastic processes:
 
 All estimation functions print results with **colored console headings** using the `cli` package.
 
+
 ---
 
-## 📘 Examples
+## 🔄 Continuous Improvement
 
-```r
-# GBM parameter estimation
-set.seed(123)
-prices <- cumprod(100 * exp(rnorm(252, mean = 0.0003, sd = 0.01)))
-GBM.estimate.params(price.series = prices, dt = 1/252, name = "Simulated Asset")
+**FinancialStochasticProcessesR** is an evolving project.  
+The package will be **updated and improved over time**, with new models, enhanced parameter estimation methods, and expanded visualization tools.  
 
-# Vasicek simulation
-set.seed(42)
-vas <- Vasicek.sim(initial.rate = 0.02, a = 0.1, b = 0.03,
-                   sigma_r = 0.01, T = 1, N = 100)
+Future updates will include:
+- Additional stochastic processes and volatility models  
+- Extended parameter estimation functions 
+- Vignettes and tutorials for practical applications  
+- Performance optimizations and expanded plotting options  
 
-# CIR simulation
-set.seed(42)
-cir <- CIR.sim(initial.rate = 0.02, a = 0.1, b = 0.03,
-               sigma_r = 0.01, T = 1, N = 100)
+---
 
-# Black–Karasinski lognormal simulation
-set.seed(42)
-bk_log <- BlackKarasinskiLog.multi(r0 = 0.03, n = 1000, dt = 1/252,
-                                   theta = seq(0.03, 0.05, length.out = 1000),
-                                   sigma = seq(0.02, 0.04, length.out = 1000),
-                                   alpha = rep(0.1, 1000), num.paths = 20)
+## 🙌 Final Notes
 
-# CKLS simulation
-set.seed(42)
-ckls <- CKLS.sim(initial.rate = 0.02, alpha = 0.5, beta = 0.5,
-                 sigma = 0.1, gamma = 1.5, T = 1, N = 50)
+This package has been built to provide a **comprehensive toolkit** for simulating, visualizing, and estimating parameters of stochastic processes in finance and econometrics.  
 
-# CEV simulation (GBM case)
-set.seed(42)
-cev <- CEVProcess.single(mu = 0.1, sigma = 0.3, gamma = 1,
-                         x0 = 1, T = 1, n = 200, N = 100)
+All functions are designed to be **flexible, easy to use, and freely available** for experimentation, research, and learning purposes.  
 
-# ARMA process simulation
-set.seed(42)
-arma_paths <- ARMA.sim(p = 2, q = 1, n = 500, N = 20,
-                       dist = "normal", plot = TRUE)
+Feel free to explore, adapt, and extend the functions to suit your own projects — whether academic, professional, or personal.  
 
-# GARCH process simulation
-set.seed(42)
-garch_paths <- GARCH.sim(p = 1, q = 1, n = 1000, N = 50,
-                         omega = 0.01, alpha = 0.1, beta = 0.85,
-                         plot = TRUE)
+---
+
+## 👋 Greetings
+
+Thank you for using **FinancialStochasticProcessesR**!  
+We hope this package helps you deepen your understanding of stochastic modeling and empowers you to run your own simulations with confidence.  
+
+Enjoy experimenting with the models, and remember:  
+**all functions can be used freely, customized, and integrated into your workflows.**
+
+## ⚠️ Disclaimer This package is intended **solely for educational, research, and illustrative purposes**. It provides tools to simulate and estimate stochastic processes commonly used in finance and econometrics. It is **not a financial advisory tool** and should not be used for trading, investment decisions, or professional risk management without proper validation. Users are responsible for verifying the accuracy and suitability of the models for their own applications.
