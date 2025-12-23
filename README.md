@@ -107,16 +107,16 @@ Future updates will include:
 - Extended parameter estimation functions 
 - Vignettes and tutorials for practical applications  
 - Performance optimizations and expanded plotting options  
-
-
 ---
 ## 👋 Notes
-
 Thank you for using **FinancialStochasticProcessesR**!  
 We hope this package helps you deepen your understanding of stochastic modeling and empowers you to run your own simulations with confidence.  
-
 Enjoy experimenting with the models, and remember:  
 **all functions can be used freely, customized, and integrated into your workflows.**
 ---
-
-## ⚠️ Disclaimer This package is intended **solely for educational, research, and illustrative purposes**. It provides tools to simulate and estimate stochastic processes commonly used in finance and econometrics. It is **not a financial advisory tool** and should not be used for trading, investment decisions, or professional risk management without proper validation. Users are responsible for verifying the accuracy and suitability of the models for their own applications.
+## ⚠️ Disclaimer This package is intended **solely for educational, 
+research, and illustrative purposes**. It provides tools to simulate and 
+estimate stochastic processes commonly used in finance and econometrics. 
+It is **not a financial advisory tool** and should not be used for trading, 
+investment decisions, or professional risk management without proper validation. 
+Users are responsible for verifying the accuracy and suitability of the models for their own applications.
