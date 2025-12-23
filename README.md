@@ -12,8 +12,8 @@ The package provides flexible tools to generate, analyze, and plot random proces
 - Simulation of **ARMA(p, q)** processes with flexible innovation distributions  
 - Simulation of **GARCH(p, q)** volatility processes  
 - Support for **heavy-tailed** and **skewed** distributions (GED, skewed-t, skewed-normal, etc.)  
-- Simulation of **interest rate models** (Vasicek, CIR, Hull–White, Black–Karasinski, CKLS, CEV)  
-- Parameter estimation functions with **bootstrap confidence intervals** (GBM, Vasicek, CIR)  
+- Simulation of **interest rate models** (Vasicek, CIR, Black–Karasinski, CKLS)  
+- Parameter estimation functions with **bootstrap confidence intervals** (GBM, Vasicek, CIR, Jump Diffusion)  
 - Easy visualization of simulated paths with automatic coloring options  
 - Unified plotting style with mean trajectory highlighted  
 
@@ -30,17 +30,23 @@ The package currently supports the following stochastic processes:
 
 2. **ARMA(p, q) Processes**  
    - Flexible autoregressive and moving-average dynamics  
-   - Customizable innovation distributions Normal, Student’s *t*, Skewed Normal, Skewed Student’s *t*, GED, Skewed GED 
+   - Distributions: Normal, Student’s *t*, Skewed Normal, Skewed Student’s *t*, GED, Skewed GED
 
-3. **GARCH(p, q) Processes**  
+3. **GARCH(p, q) and APARCH Processes**  
    - Conditional heteroskedasticity models for volatility clustering  
-   - Simulation of returns with time-varying variance  
+   - Simulation of returns with time-varying variance
+   - Distributions: Normal, Student’s *t*, Skewed Normal, Skewed Student’s *t*, GED, Skewed GED
 
 4. **Geometric Brownian Motion (GBM)**  
    - Classic model for asset prices  
    - Simulation via `GBM.sim()`  
    - Parameter estimation via `GBM.estimate.params()` with optional bootstrap  
 
+5. **Jump Diffusion Model**  
+   - Jump Diffusion Process, combining Poisson Jumps and Brownian Motion 
+   - Simulation via `JumpDiffusion.sim()`  
+   - Parameter estimation via `JD.estimate.params()`
+     
 5. **Vasicek Model**  
    - Mean-reverting Ornstein–Uhlenbeck process  
    - Simulation via `Vasicek.sim()`  
@@ -77,6 +83,10 @@ The package currently supports the following stochastic processes:
 
 - **Vasicek.estimate.params()**  
   - Estimates mean-reversion speed (a), long-term mean (b), and volatility (σ)  
+  - Supports block bootstrap confidence intervals
+ 
+- **JD.estimate.params()**  
+  - Estimates the mean (μ), volatility (σ), Jump size (g), and Jump frequency (phi)
   - Supports block bootstrap confidence intervals  
 
 - **CIR.estimate.params()**  
