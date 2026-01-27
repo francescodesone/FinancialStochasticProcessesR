@@ -23,7 +23,6 @@ The package provides flexible tools to generate, analyze, and plot random proces
 The package currently supports the following stochastic processes:
 
 1. **Random Walk (RW)**  
-   - Additive or multiplicative form  
    - Custom drift and volatility  
    - Distributions: Normal, Student’s *t*, Skewed Normal, Skewed Student’s *t*, GED, Skewed GED  
 
